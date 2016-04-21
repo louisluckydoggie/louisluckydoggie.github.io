@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>数字证书的编码（Encoding）与文件扩展名（Extensions) | Louis&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数字证书编码（Encoding）与文件扩展名（Extensions）证书与编码X.509 - 这是一种证书标准，主要定义了证书中应该包含哪些内容。其详情可以参考RFC5280。SSL使用的就是这种证书标准。
+X.509证书的本质是一个根据RFC5280进行编码和数字签名的数字文件。
+扩展名与编码我们首先应该弄清楚扩展名和编码格式有什么关系。证书有很多的扩展名，包括DER，PEM，CRT和CER。一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字证书的编码（Encoding）与文件扩展名（Extensions)">
+<meta property="og:url" content="http://www.louislu.cn/2016/04/21/Certificate/index.html">
+<meta property="og:site_name" content="Louis's Blog">
+<meta property="og:description" content="数字证书编码（Encoding）与文件扩展名（Extensions）证书与编码X.509 - 这是一种证书标准，主要定义了证书中应该包含哪些内容。其详情可以参考RFC5280。SSL使用的就是这种证书标准。
+X.509证书的本质是一个根据RFC5280进行编码和数字签名的数字文件。
+扩展名与编码我们首先应该弄清楚扩展名和编码格式有什么关系。证书有很多的扩展名，包括DER，PEM，CRT和CER。一">
+<meta property="og:updated_time" content="2016-04-21T01:41:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数字证书的编码（Encoding）与文件扩展名（Extensions)">
+<meta name="twitter:description" content="数字证书编码（Encoding）与文件扩展名（Extensions）证书与编码X.509 - 这是一种证书标准，主要定义了证书中应该包含哪些内容。其详情可以参考RFC5280。SSL使用的就是这种证书标准。
+X.509证书的本质是一个根据RFC5280进行编码和数字签名的数字文件。
+扩展名与编码我们首先应该弄清楚扩展名和编码格式有什么关系。证书有很多的扩展名，包括DER，PEM，CRT和CER。一">
+  
+    <link rel="alternate" href="/atom.xml" title="Louis&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Louis&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Growing up.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.louislu.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Certificate" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/21/Certificate/" class="article-date">
+  <time datetime="2016-04-21T01:38:29.000Z" itemprop="datePublished">2016-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数字证书的编码（Encoding）与文件扩展名（Extensions)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h1><h2 id="编码（Encoding）与文件扩展名（Extensions）"><a href="#编码（Encoding）与文件扩展名（Extensions）" class="headerlink" title="编码（Encoding）与文件扩展名（Extensions）"></a>编码（Encoding）与文件扩展名（Extensions）</h2><h3 id="证书与编码"><a href="#证书与编码" class="headerlink" title="证书与编码"></a>证书与编码</h3><p><strong>X.509</strong> - 这是一种证书标准，主要定义了证书中应该包含哪些内容。其详情可以参考RFC5280。SSL使用的就是这种证书标准。</p>
+<p>X.509证书的本质是一个根据RFC5280进行编码和数字签名的数字文件。</p>
+<h3 id="扩展名与编码"><a href="#扩展名与编码" class="headerlink" title="扩展名与编码"></a>扩展名与编码</h3><p>我们首先应该弄清楚扩展名和编码格式有什么关系。证书有很多的扩展名，包括DER，PEM，CRT和CER。一种不准确的的说法是它们都是通用的。事实上，虽然在某些情况下是可以互换的，但是最好的做法应该是先确认您的证书是如何编码的，然后再正确地为证书贴上标签。</p>
+<h3 id="编码格式"><a href="#编码格式" class="headerlink" title="编码格式"></a>编码格式</h3><p>实际上，同样的X.509证书，可能有不同的编码格式，目前有PEM和DER两种编码格式。</p>
+<h4 id="PEM"><a href="#PEM" class="headerlink" title="PEM"></a>PEM</h4><p><strong>PEM</strong> - Privacy Enhanced Mail， Openssl 使用 PEM 格式来存放各种信息，它是 openssl 默认采用的信息存放方式，内容是BASE64编码。   </p>
+<p>使用PEM格式存储的证书：  </p>
+<pre><code>—–BEGIN CERTIFICATE—– 
+
+
+—–END CERTIFICATE—–
+</code></pre><p>使用PEM格式存储的私钥：</p>
+<pre><code>—–BEGIN RSA PRIVATE KEY—– 
+
+
+—–END RSA PRIVATE KEY—–
+</code></pre><p>Apache和*NIX服务器偏向于使用这种编码格式。</p>
+<p>UPYUN只支持这样编码格式的证书来上传。（与扩展名无关）</p>
+<h4 id="DER"><a href="#DER" class="headerlink" title="DER"></a>DER</h4><p><strong>DER</strong> - Distinguished Encoding Rules，打开看是二进制格式，不可读。   </p>
+<p>Java和Windows服务器偏向于使用这种编码格式。</p>
+<h3 id="文件扩展名"><a href="#文件扩展名" class="headerlink" title="文件扩展名"></a>文件扩展名</h3><p>扩展名是比较误导人的地方，虽然我们已经知道有PEM和DER这两种编码格式，但文件扩展名并不一定就叫“PEM”或者“DER”，常见的扩展名除了PEM和DER还有以下这些,它们除了编码格式可能不同之外，内容也有差别，但大多数都能相互转换编码格式。</p>
+<p><strong>CRT</strong> - CRT应该是certificate的三个字母，其实还是证书的意思，常见于*NIX系统，有可能是PEM编码，也有可能是DER编码，大多数应该是PEM编码，相信你已经知道怎么辨别。   </p>
+<p><strong>CER</strong> - 还是certificate，还是证书，常见于Windows系统，同样的，可能是PEM编码，也可能是DER编码，大多数应该是DER编码。</p>
+<h3 id="证书编码的转换"><a href="#证书编码的转换" class="headerlink" title="证书编码的转换"></a>证书编码的转换</h3><p><strong>PEM转为DER</strong> <code>openssl x509 -in cert.crt -outform der -out cert.der</code></p>
+<p><strong>DER转为PEM</strong> <code>openssl x509 -in cert.crt -inform der -outform pem -out cert.pem</code></p>
+<h3 id="拓展阅读"><a href="#拓展阅读" class="headerlink" title="拓展阅读"></a>拓展阅读</h3><p><a href="http://www.williamlong.info/archives/3461.html" title="为什么在12306买火车票要装根证书？" target="_blank" rel="external">为什么在12306买火车票要装根证书？</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.louislu.cn/2016/04/21/Certificate/" data-id="cin9myf6q0000qatwxqjr2kyi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/21/celery-multi-tasks/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Celery多tasks
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/15/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/04/21/Django-encoding/">Django编码问题</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/21/celery-multi-tasks/">Celery多tasks</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/21/Certificate/">数字证书的编码（Encoding）与文件扩展名（Extensions)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/15/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Louis<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

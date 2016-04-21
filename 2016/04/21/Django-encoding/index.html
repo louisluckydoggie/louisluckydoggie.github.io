@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Django编码问题 | Louis&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Django中报错UnicodeEncodeError: ‘ascii’ codec can’t encode characters 之解决方法第一步：解决方法：因为原先写的模型代码中的方法用提　def str(self): 这个是旧版本中用的方法，在Django　0.96以后的版本中，应该换成　def unicode(self):，　这样就解决了字符串传递时出错的问题，统一编码为Unicode字">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django编码问题">
+<meta property="og:url" content="http://www.louislu.cn/2016/04/21/Django-encoding/index.html">
+<meta property="og:site_name" content="Louis's Blog">
+<meta property="og:description" content="Django中报错UnicodeEncodeError: ‘ascii’ codec can’t encode characters 之解决方法第一步：解决方法：因为原先写的模型代码中的方法用提　def str(self): 这个是旧版本中用的方法，在Django　0.96以后的版本中，应该换成　def unicode(self):，　这样就解决了字符串传递时出错的问题，统一编码为Unicode字">
+<meta property="og:updated_time" content="2016-04-21T01:57:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Django编码问题">
+<meta name="twitter:description" content="Django中报错UnicodeEncodeError: ‘ascii’ codec can’t encode characters 之解决方法第一步：解决方法：因为原先写的模型代码中的方法用提　def str(self): 这个是旧版本中用的方法，在Django　0.96以后的版本中，应该换成　def unicode(self):，　这样就解决了字符串传递时出错的问题，统一编码为Unicode字">
+  
+    <link rel="alternate" href="/atom.xml" title="Louis&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Louis&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Growing up.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.louislu.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Django-encoding" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/21/Django-encoding/" class="article-date">
+  <time datetime="2016-04-21T01:54:05.000Z" itemprop="datePublished">2016-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Django编码问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Django中报错UnicodeEncodeError-‘ascii’-codec-can’t-encode-characters-之解决方法"><a href="#Django中报错UnicodeEncodeError-‘ascii’-codec-can’t-encode-characters-之解决方法" class="headerlink" title="Django中报错UnicodeEncodeError: ‘ascii’ codec can’t encode characters 之解决方法"></a>Django中报错UnicodeEncodeError: ‘ascii’ codec can’t encode characters 之解决方法</h2><p>第一步：<br>解决方法：因为原先写的模型代码中的方法用提　def <strong>str</strong>(self): 这个是旧版本中用的方法，在Django　0.96以后的版本中，应该换成　def <strong>unicode</strong>(self):，　这样就解决了字符串传递时出错的问题，统一编码为Unicode字符串。<br>第二步：<br>将mysql里的字段encoding改成utf-8。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.louislu.cn/2016/04/21/Django-encoding/" data-id="cin9myf6w0001qatwawiwsocf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/21/celery-multi-tasks/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Celery多tasks</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/04/21/Django-encoding/">Django编码问题</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/21/celery-multi-tasks/">Celery多tasks</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/21/Certificate/">数字证书的编码（Encoding）与文件扩展名（Extensions)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/15/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Louis<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
