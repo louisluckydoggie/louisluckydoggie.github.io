@@ -68,47 +68,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Dota2-WTF-175" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/27/Dota2-WTF-175/" class="article-date">
-  <time datetime="2016-04-27T03:15:27.000Z" itemprop="datePublished">2016-04-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/27/Dota2-WTF-175/">Dota2 WTF 175</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <iframe height="498" width="510" src="http://louis-video.b0.upaiyun.com/WTFMoments175.mp4" frameborder="0" allowfullscreen></iframe>
-
-<p>转载自<a href="https://www.youtube.com/watch?v=A0t8QiKfjCQ" target="_blank" rel="external">https://www.youtube.com/watch?v=A0t8QiKfjCQ</a> Dota 2 WTF Moments 175</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.louislu.cn/2016/04/27/Dota2-WTF-175/" data-id="ciniaikfh000098tw01d4w1sf" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GAME/">GAME</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-Django-encoding" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/04/21/Django-encoding/" class="article-date">
@@ -136,7 +95,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.louislu.cn/2016/04/21/Django-encoding/" data-id="ciniaikft000398twfnybj3aw" class="article-share-link">Share</a>
+      <a data-url="http://www.louislu.cn/2016/04/21/Django-encoding/" data-id="cio9qet250003cctwy4krytsa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -173,7 +132,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.louislu.cn/2016/04/21/celery-multi-tasks/" data-id="ciniaikfv000498twrwksrff6" class="article-share-link">Share</a>
+      <a data-url="http://www.louislu.cn/2016/04/21/celery-multi-tasks/" data-id="cio9qet200001cctw5whc1e78" class="article-share-link">Share</a>
       
       
     </footer>
@@ -205,36 +164,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h1><h2 id="编码（Encoding）与文件扩展名（Extensions）"><a href="#编码（Encoding）与文件扩展名（Extensions）" class="headerlink" title="编码（Encoding）与文件扩展名（Extensions）"></a>编码（Encoding）与文件扩展名（Extensions）</h2><h3 id="证书与编码"><a href="#证书与编码" class="headerlink" title="证书与编码"></a>证书与编码</h3><p><strong>X.509</strong> - 这是一种证书标准，主要定义了证书中应该包含哪些内容。其详情可以参考RFC5280。SSL使用的就是这种证书标准。</p>
-<p>X.509证书的本质是一个根据RFC5280进行编码和数字签名的数字文件。</p>
-<h3 id="扩展名与编码"><a href="#扩展名与编码" class="headerlink" title="扩展名与编码"></a>扩展名与编码</h3><p>我们首先应该弄清楚扩展名和编码格式有什么关系。证书有很多的扩展名，包括DER，PEM，CRT和CER。一种不准确的的说法是它们都是通用的。事实上，虽然在某些情况下是可以互换的，但是最好的做法应该是先确认您的证书是如何编码的，然后再正确地为证书贴上标签。</p>
-<h3 id="编码格式"><a href="#编码格式" class="headerlink" title="编码格式"></a>编码格式</h3><p>实际上，同样的X.509证书，可能有不同的编码格式，目前有PEM和DER两种编码格式。</p>
-<h4 id="PEM"><a href="#PEM" class="headerlink" title="PEM"></a>PEM</h4><p><strong>PEM</strong> - Privacy Enhanced Mail， Openssl 使用 PEM 格式来存放各种信息，它是 openssl 默认采用的信息存放方式，内容是BASE64编码。   </p>
-<p>使用PEM格式存储的证书：  </p>
-<pre><code>—–BEGIN CERTIFICATE—– 
-
-
-—–END CERTIFICATE—–
-</code></pre><p>使用PEM格式存储的私钥：</p>
-<pre><code>—–BEGIN RSA PRIVATE KEY—– 
-
-
-—–END RSA PRIVATE KEY—–
-</code></pre><p>Apache和*NIX服务器偏向于使用这种编码格式。</p>
-<p>UPYUN只支持这样编码格式的证书来上传。（与扩展名无关）</p>
-<h4 id="DER"><a href="#DER" class="headerlink" title="DER"></a>DER</h4><p><strong>DER</strong> - Distinguished Encoding Rules，打开看是二进制格式，不可读。   </p>
-<p>Java和Windows服务器偏向于使用这种编码格式。</p>
-<h3 id="文件扩展名"><a href="#文件扩展名" class="headerlink" title="文件扩展名"></a>文件扩展名</h3><p>扩展名是比较误导人的地方，虽然我们已经知道有PEM和DER这两种编码格式，但文件扩展名并不一定就叫“PEM”或者“DER”，常见的扩展名除了PEM和DER还有以下这些,它们除了编码格式可能不同之外，内容也有差别，但大多数都能相互转换编码格式。</p>
-<p><strong>CRT</strong> - CRT应该是certificate的三个字母，其实还是证书的意思，常见于*NIX系统，有可能是PEM编码，也有可能是DER编码，大多数应该是PEM编码，相信你已经知道怎么辨别。   </p>
-<p><strong>CER</strong> - 还是certificate，还是证书，常见于Windows系统，同样的，可能是PEM编码，也可能是DER编码，大多数应该是DER编码。</p>
-<h3 id="证书编码的转换"><a href="#证书编码的转换" class="headerlink" title="证书编码的转换"></a>证书编码的转换</h3><p><strong>PEM转为DER</strong> <code>openssl x509 -in cert.crt -outform der -out cert.der</code></p>
-<p><strong>DER转为PEM</strong> <code>openssl x509 -in cert.crt -inform der -outform pem -out cert.pem</code></p>
-<h3 id="拓展阅读"><a href="#拓展阅读" class="headerlink" title="拓展阅读"></a>拓展阅读</h3><p><a href="http://www.williamlong.info/archives/3461.html" title="为什么在12306买火车票要装根证书？" target="_blank" rel="external">为什么在12306买火车票要装根证书？</a></p>
-
+        <h1 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h1><h2 id="编码（Encoding）与文件扩展名（Extensions）"><a href="#编码（Encoding）与文件扩展名（Extensions）" class="headerlink" title="编码（Encoding）与文件扩展名（Extensions）"></a>编码（Encoding）与文件扩展名（Extensions）</h2>
+        
+          <p class="article-more-link">
+            <a href="/2016/04/21/Certificate/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.louislu.cn/2016/04/21/Certificate/" data-id="ciniaikfn000198twd6o1ktkd" class="article-share-link">Share</a>
+      <a data-url="http://www.louislu.cn/2016/04/21/Certificate/" data-id="cio9qet1v0000cctw1r59p85r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -279,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.louislu.cn/2016/04/15/hello-world/" data-id="ciniaikfx000598tw111hi2ct" class="article-share-link">Share</a>
+      <a data-url="http://www.louislu.cn/2016/04/15/hello-world/" data-id="cio9qet230002cctwaf3nerrj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -298,23 +237,9 @@
 
   
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GAME/">GAME</a></li></ul>
-    </div>
-  </div>
-
 
   
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/GAME/" style="font-size: 10px;">GAME</a>
-    </div>
-  </div>
-
   
     
   <div class="widget-wrap">
@@ -331,10 +256,6 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2016/04/27/Dota2-WTF-175/">Dota2 WTF 175</a>
-          </li>
         
           <li>
             <a href="/2016/04/21/Django-encoding/">Django编码问题</a>
