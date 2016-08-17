@@ -223,6 +223,116 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/17/command-hide/" itemprop="url">
+                  Linux下进程前后台切换以及管理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-08-17T17:01:33+08:00" content="2016-08-17">
+              2016-08-17
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Linux里进程前后台相关的主要有一下几个操作:</p>
+<pre><code>command &amp;   //将进程放在后台执行     
+ctrl-z      //暂停当前进程 并放入后台    
+jobs        //查看当前后台任务    
+bg          //将任务转为后台执行    
+fg          //将任务调回前台   
+kill        //杀掉任务 
+ps          //查看进程
+</code></pre><h1 id="如何使一个进程在后台运行"><a href="#如何使一个进程在后台运行" class="headerlink" title="如何使一个进程在后台运行"></a>如何使一个进程在后台运行</h1><h2 id="1-command-amp"><a href="#1-command-amp" class="headerlink" title="1.command &amp;   "></a>1.<code>command &amp;</code>   </h2><p>在运行的命令后加一个<code>&amp;</code>号，就会后台运行命令。   </p>
+<h2 id="2-ctrl-z"><a href="#2-ctrl-z" class="headerlink" title="2.ctrl-z   "></a>2.<code>ctrl-z</code>   </h2><p>在终端中按<code>ctrl-z</code>会将当前任务暂停并转入后台。</p>
+<h2 id="3-jobs"><a href="#3-jobs" class="headerlink" title="3.jobs"></a>3.<code>jobs</code></h2><p>利用<code>jobs</code>命令可以查看当前后台的任务，如果加上<code>-l</code>参数，那么就会显示详细信息：     </p>
+<p><img src="http://louisserver.b0.upaiyun.com/blog/linux_hide_command/1.png" alt=""></p>
+<h2 id="4-bg和fg"><a href="#4-bg和fg" class="headerlink" title="4.bg和fg      "></a>4.<code>bg</code>和<code>fg</code>      </h2><p>可以发现上图中有 Stopped 状态的进程，可以通过<code>bg %i</code>（i为进程的标号）命令可以将其转为运行。</p>
+<p>如果想要将任务切换回前台，可以利用<code>fg %i</code>命令。</p>
+<h2 id="5-kill"><a href="#5-kill" class="headerlink" title="5.kill"></a>5.<code>kill</code></h2><p>如果想要结束任务，可以利用<code>kill %i</code>命令。</p>
+<h2 id="6-ps"><a href="#6-ps" class="headerlink" title="6.ps"></a>6.<code>ps</code></h2><p>ps可查看所有进程，而非当前会话。如<code>ps -ef|grep ping</code>可查看所有<code>ping</code>相关的进程：    </p>
+<p><img src="http://louisserver.b0.upaiyun.com/blog/linux_hide_command/2.png" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/21/Django-encoding/" itemprop="url">
                   Django编码问题
                 </a>
@@ -527,7 +637,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
