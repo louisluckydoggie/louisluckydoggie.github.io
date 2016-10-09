@@ -223,6 +223,109 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/09/python3/" itemprop="url">
+                  如何安装 Python 3 的虚拟环境
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-10-09T13:08:06+08:00" content="2016-10-09">
+              2016-10-09
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="因为我本机装的是-Python-2-7-特地写个文档来记录下如何安装-Python-3-的虚拟环境。"><a href="#因为我本机装的是-Python-2-7-特地写个文档来记录下如何安装-Python-3-的虚拟环境。" class="headerlink" title="因为我本机装的是 Python 2.7 ,特地写个文档来记录下如何安装 Python 3 的虚拟环境。"></a>因为我本机装的是 Python 2.7 ,特地写个文档来记录下如何安装 Python 3 的虚拟环境。</h2><ol>
+<li><p>本机只有 Python 2 的环境，所以我们还需要去官网下载 Python 3 ，如果你是使用的 MAC ，那么安装就非常方便，从 Python 官网下载Python 3.5 的安装程序，双击运行并安装即可。</p>
+</li>
+<li><p>MAC 下环境变量不用手动设置，安装程序已经帮你指定，所以接下来我们只要创建虚拟环境（前提是你已经安装了<code>virtualenv</code>）：<br><br><code>$ virtualenv -p python3 learn_p3_env</code><br><br>这里的<code>-p</code>指的是指定 Python 3 来安装虚拟环境。    </p>
+</li>
+<li><p>接下来需要去激活虚拟环境：<br><br><code>$ source ./learn_p3_env/bin/activate</code><br><br>注意此时命令行会多一个<code>learn_p3_env</code>，接下来所有模块都只会安装到这个虚拟的环境中去。</p>
+</li>
+<li><p>如果你要退出虚拟环境，只要输入以下命令即可：<br><br><code>$ deactivate</code></p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/17/command-hide/" itemprop="url">
                   Linux下进程前后台切换以及管理
                 </a>
@@ -637,7 +740,7 @@ ps          //查看进程
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

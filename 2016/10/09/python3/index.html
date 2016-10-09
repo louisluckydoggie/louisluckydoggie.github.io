@@ -84,16 +84,25 @@
 
 
 
-<meta name="description" content="Celery多taskscelery在使用一个以上的task的时候，需要from celery import shared_task,然后在引用的时候加上@shared_task装饰器即可实现多tasks。">
+<meta name="description" content="因为我本机装的是 Python 2.7 ,特地写个文档来记录下如何安装 Python 3 的虚拟环境。
+本机只有 Python 2 的环境，所以我们还需要去官网下载 Python 3 ，如果你是使用的 MAC ，那么安装就非常方便，从 Python 官网下载Python 3.5 的安装程序，双击运行并安装即可。
+
+MAC 下环境变量不用手动设置，安装程序已经帮你指定，所以接下来我们只要创建虚拟环境">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Celery多tasks">
-<meta property="og:url" content="http://www.louislu.cn/2016/04/21/celery-multi-tasks/index.html">
+<meta property="og:title" content="如何安装 Python 3 的虚拟环境">
+<meta property="og:url" content="http://www.louislu.cn/2016/10/09/python3/index.html">
 <meta property="og:site_name" content="Louis's Blog">
-<meta property="og:description" content="Celery多taskscelery在使用一个以上的task的时候，需要from celery import shared_task,然后在引用的时候加上@shared_task装饰器即可实现多tasks。">
-<meta property="og:updated_time" content="2016-04-21T01:56:39.000Z">
+<meta property="og:description" content="因为我本机装的是 Python 2.7 ,特地写个文档来记录下如何安装 Python 3 的虚拟环境。
+本机只有 Python 2 的环境，所以我们还需要去官网下载 Python 3 ，如果你是使用的 MAC ，那么安装就非常方便，从 Python 官网下载Python 3.5 的安装程序，双击运行并安装即可。
+
+MAC 下环境变量不用手动设置，安装程序已经帮你指定，所以接下来我们只要创建虚拟环境">
+<meta property="og:updated_time" content="2016-10-09T05:33:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Celery多tasks">
-<meta name="twitter:description" content="Celery多taskscelery在使用一个以上的task的时候，需要from celery import shared_task,然后在引用的时候加上@shared_task装饰器即可实现多tasks。">
+<meta name="twitter:title" content="如何安装 Python 3 的虚拟环境">
+<meta name="twitter:description" content="因为我本机装的是 Python 2.7 ,特地写个文档来记录下如何安装 Python 3 的虚拟环境。
+本机只有 Python 2 的环境，所以我们还需要去官网下载 Python 3 ，如果你是使用的 MAC ，那么安装就非常方便，从 Python 官网下载Python 3.5 的安装程序，双击运行并安装即可。
+
+MAC 下环境变量不用手动设置，安装程序已经帮你指定，所以接下来我们只要创建虚拟环境">
 
 
 
@@ -111,7 +120,7 @@
   };
 </script>
 
-  <title> Celery多tasks | Louis's Blog </title>
+  <title> 如何安装 Python 3 的虚拟环境 | Louis's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -221,7 +230,7 @@
             
             
               
-                Celery多tasks
+                如何安装 Python 3 的虚拟环境
               
             
           </h1>
@@ -233,8 +242,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-04-21T09:46:58+08:00" content="2016-04-21">
-              2016-04-21
+            <time itemprop="dateCreated" datetime="2016-10-09T13:08:06+08:00" content="2016-10-09">
+              2016-10-09
             </time>
           </span>
 
@@ -261,7 +270,16 @@
       
 
       
-        <h2 id="Celery多tasks"><a href="#Celery多tasks" class="headerlink" title="Celery多tasks"></a>Celery多tasks</h2><p>celery在使用一个以上的task的时候，需要<code>from celery import shared_task</code>,然后在引用的时候加上<code>@shared_task</code>装饰器即可实现多tasks。</p>
+        <h2 id="因为我本机装的是-Python-2-7-特地写个文档来记录下如何安装-Python-3-的虚拟环境。"><a href="#因为我本机装的是-Python-2-7-特地写个文档来记录下如何安装-Python-3-的虚拟环境。" class="headerlink" title="因为我本机装的是 Python 2.7 ,特地写个文档来记录下如何安装 Python 3 的虚拟环境。"></a>因为我本机装的是 Python 2.7 ,特地写个文档来记录下如何安装 Python 3 的虚拟环境。</h2><ol>
+<li><p>本机只有 Python 2 的环境，所以我们还需要去官网下载 Python 3 ，如果你是使用的 MAC ，那么安装就非常方便，从 Python 官网下载Python 3.5 的安装程序，双击运行并安装即可。</p>
+</li>
+<li><p>MAC 下环境变量不用手动设置，安装程序已经帮你指定，所以接下来我们只要创建虚拟环境（前提是你已经安装了<code>virtualenv</code>）：<br><br><code>$ virtualenv -p python3 learn_p3_env</code><br><br>这里的<code>-p</code>指的是指定 Python 3 来安装虚拟环境。    </p>
+</li>
+<li><p>接下来需要去激活虚拟环境：<br><br><code>$ source ./learn_p3_env/bin/activate</code><br><br>注意此时命令行会多一个<code>learn_p3_env</code>，接下来所有模块都只会安装到这个虚拟的环境中去。</p>
+</li>
+<li><p>如果你要退出虚拟环境，只要输入以下命令即可：<br><br><code>$ deactivate</code></p>
+</li>
+</ol>
 
       
     </div>
@@ -286,17 +304,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/21/Certificate/" rel="next" title="数字证书的编码（Encoding）与文件扩展名（Extensions)">
-                <i class="fa fa-chevron-left"></i> 数字证书的编码（Encoding）与文件扩展名（Extensions)
+              <a href="/2016/08/17/command-hide/" rel="next" title="Linux下进程前后台切换以及管理">
+                <i class="fa fa-chevron-left"></i> Linux下进程前后台切换以及管理
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/21/Django-encoding/" rel="prev" title="Django编码问题">
-                Django编码问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -396,7 +410,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Celery多tasks"><span class="nav-number">1.</span> <span class="nav-text">Celery多tasks</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#因为我本机装的是-Python-2-7-特地写个文档来记录下如何安装-Python-3-的虚拟环境。"><span class="nav-number">1.</span> <span class="nav-text">因为我本机装的是 Python 2.7 ,特地写个文档来记录下如何安装 Python 3 的虚拟环境。</span></a></li></ol></div>
             
           </div>
         </section>
